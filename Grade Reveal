@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Your Grade</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    width:320px;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:#2c7be5;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1a5edb;
+}
+
+#result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Check Your Grade</h2>
+<p>Enter your name</p>
+
+<input type="text" id="studentName" placeholder="Type your name">
+
+<br>
+
+<button onclick="checkGrade()">Check Grade</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+const grades = {
+
+“Allas”: 91,
+"Alonzo": 92,
+"Andres": 95,
+"Baguindoc": 93,
+"Blanco".: 81,
+"Bulan": 85,
+"Cabunagan": 95,
+"Caiman": 97,
+"Canapi": 90,
+"Chilagan": 92,
+"Chua": 92,
+"Cogay": 92,
+"Dela Cruz B": 93,
+"Dela Cruz K": 90,
+"Delos Santos": 95,
+"Domingo": 92,
+"Duaman": 90,
+"Dulluog": 87,
+"Estipular": 97,
+"Florendo": 95,
+"Gumba": 93,
+"Joaquin": 93,
+"Khandoker": 95,
+"Lamug": 94,
+"Lobregat": 94,
+"Medina": 97,
+"Nayona": 91,
+"Oliveros": 93,
+"Pablo": 96,
+"Patricio": 93,
+"Puyat": 96,
+"Reyes": 93,
+"Roderos": 85,
+"Rumbaoa": 92,
+"Saet": 89,
+"Saladino": 91,
+"Solis": 97,
+"Tocmo": 92,
+"Tomas": 85,
+"Urdas": 96,
+"Valera C": 96,
+"Valera R": 93,
+"Vicente": 90
+
+};
+
+function checkGrade(){
+
+let name = document.getElementById("studentName").value.trim();
+let result = document.getElementById("result");
+
+if(grades[name]){
+
+result.innerHTML = "Your Prelim Grade: " + grades[name];
+
+}else{
+
+result.innerHTML = "Name not found. Please check spelling.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
